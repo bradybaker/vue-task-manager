@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" :style="{background: color}" class="btn">{{text}}</button>
+    <button @click="$emit('toggle-add-task')" :style="{background: color}" class="btn">{{text}}</button>
 </template>
 
 <script>
@@ -8,11 +8,6 @@
         props: {
             text: String,
             color: String
-        },
-        methods: {
-            onClick() {
-                this.$emit('toggle-add-task')
-            }
         }
     }
 </script>
