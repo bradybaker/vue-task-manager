@@ -27,9 +27,13 @@ export default {
     }
   },
   methods: {
-    deleteTask(id) {
+    async deleteTask(id) {
       if (confirm('Are you sure?')) {
-        this.tasks = this.tasks.filter((task) => task.id !== id) 
+        const res = await fetch(`api/tasks/${id}`, {
+          method: 'DELETE',
+        })
+
+        res.status === 200 ? (this.tasks = this.tasks.filter((task) => task.id !== id)) : alert('Error Deleteing Task')        
       }
     },
     toggleReminder(reminder, id) {
