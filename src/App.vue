@@ -5,6 +5,7 @@
     <AddTask @add-task="addTask" />
   </div>
   <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
+  <Footer />
 </div>
 </template>
 
@@ -12,13 +13,15 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
     Tasks,
-    AddTask
+    AddTask,
+    Footer
   },
   data() {
     return {
@@ -51,7 +54,7 @@ export default {
       })
 
       const data = await res.json()
-      
+
       this.tasks = this.tasks.map((task) => task.id === id ? {...task, reminder: data.reminder} : task )
     },
     async addTask(newTask) {
