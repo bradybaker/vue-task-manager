@@ -7,16 +7,16 @@
       "reminder": true
     },
     {
-      "id": 2,
-      "text": "Meeting at school",
-      "day": "March 3rd at 1:30pm",
-      "reminder": true
-    },
-    {
       "id": 61373,
       "text": "Go to gym",
       "day": "April 1 at 7:00am",
       "reminder": false
+    },
+    {
+      "id": 81030,
+      "text": "Walk pup",
+      "day": "April 1 at 7:00a=pm",
+      "reminder": true
     }
   ]
 }
